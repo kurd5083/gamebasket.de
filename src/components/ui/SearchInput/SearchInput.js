@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@componentsUi/SearchInput/SearchInput.module.scss'
+import Image from 'next/image';
 
 const SearchInput = () => {
   return (
@@ -10,7 +11,7 @@ const SearchInput = () => {
         placeholder='asd'
         />
       <button className={styled.search_button}>
-        <img src='/images/search_icon.svg'/>
+        <Image src='/images/search_icon.svg' width={16} height={16}/>
         </button>
     </div>
   )

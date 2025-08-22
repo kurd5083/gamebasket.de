@@ -1,14 +1,16 @@
 'use client'
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import styled from './Warenkorb.module.scss'
 import { useCartState } from '@store/useCartState';
-
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Warenkorb = () => {
 	const { carts, removeCart, updateCart, totalPrice, totalDiscount, totalItems} = useCartState();
 	const [selectCart, setSelectCart] = useState([]);
 	const [stateBtn, setStateBtn] = useState(false)
+	const [mounted, setMounted] = useState(false);
+	useEffect(() => setMounted(true), []);
 	const handleSelectCart = (id) => {
 		if (id == 'all') {
 			console.log(selectCart)
@@ -35,7 +37,7 @@ const Warenkorb = () => {
 		<section className={styled.cart}>
 			<header className={styled.cart_header}>
 				<h2 className={styled.cart_title}>Warenkorb</h2>
-				<p className={styled.cart_quantity}>{totalItems()} Artikel</p>
+				<p className={styled.cart_quantity}>{mounted ? totalItems() : 0} Artikel</p>
 			</header>
 			<div className={styled.cart_content}>
 				<div className={styled.cart_content_left}>
@@ -44,13 +46,13 @@ const Warenkorb = () => {
 							className={styled.cart_button_select}
 							onClick={() => handleSelectCart('all')}
 						>
-							<img src="images/check_icon.svg" alt="Ausgew" />Alle auswaehlen
+							<Image src="images/check_icon.svg" width={16} height={16} alt="Ausgew"/>Alle auswaehlen
 						</button>
 						<button 
 							className={styled.cart_button_del}
 							onClick={() => removeCart(selectCart)}
 						>
-							<img src="images/del_icon_white.svg" alt="Lueschen" />Ausgewaehlte lueschen
+							<Image src="images/del_icon_white.svg" width={16} height={16} alt="Lueschen"/>Ausgewaehlte lueschen
 						</button>
 					</div>
 					<ul className={styled.product_list}>
@@ -61,10 +63,16 @@ const Warenkorb = () => {
 										className={`${styled.game_select_button} ${selectCart.includes(cart.id) ? styled.active : ''} `}
 										onClick={() => handleSelectCart(cart.id)}
 									>
-										<img src="images/check_icon_white.svg" alt="Ausgew" />
+										<Image src="images/check_icon_white.svg" alt="Ausgew" width={16} height={16}/>
 									</button>
 									<Link href="">
-										<img className={styled.product_image} src={cart.cover} alt="" />
+										<Image 
+											className={styled.product_image} 
+											src={cart.cover} 
+											width={200}
+											height={150}
+											alt="" 
+										/>
 									</Link>
 									<div className={styled.product_details}>
 										<div className={styled.product_details_content}>
@@ -106,7 +114,7 @@ const Warenkorb = () => {
 													className={styled.delete_item_button}
 													onClick={() => removeCart([cart.id])}
 												>
-													<img src="images/del_icon.svg" alt="Del" />
+													<Image src="images/del_icon.svg" width={20} height={20} alt="Del"/>
 												</button>
 											</div>
 										</div>
@@ -130,12 +138,12 @@ const Warenkorb = () => {
 
 						<div className={styled.price_blocks}>
 							<div className={styled.price_block}>
-								<p>{totalItems()} Artikel</p>
-								<p>€{totalPrice()}</p>
+								<p>{mounted ? totalItems() : 0} Artikel</p>
+								<p>€{mounted ? totalPrice() : 0}</p>
 							</div>
 							<div className={styled.price_block}>
 								<p>Rabatt</p>
-								<p>€{totalDiscount()}</p>
+								<p>€{mounted ? totalDiscount() : 0}</p>
 							</div>
 							<div className={styled.total_block}>
 								<h3>Gesamt</h3>

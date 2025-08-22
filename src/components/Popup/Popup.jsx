@@ -4,6 +4,7 @@ import styled from '@components/Popup/Popup.module.scss';
 import { usePopupStore } from '@store/usePopupStore';
 import { useAuthStore } from "@store/useAuthStore";
 import { popup_data } from '@mocks/popup';
+import Image from 'next/image';
 
 const Popup = () => {
 	const { popup, openPopup, isPopupOpen, closePopup } = usePopupStore();
@@ -51,9 +52,20 @@ const Popup = () => {
 		<section className={styled.popup_overlay} onClick={() => closePopup()}>
 			<div className={styled.popup_content} onClick={(e) => e.stopPropagation()}>
 				<button className={styled.popup_close} onClick={() => closePopup()}>
-					<img src='/images/del_icon.svg' alt="Schließen" />
+					<Image 
+						src='/images/del_icon.svg' 
+						width={18}
+						height={18}
+						alt="Schließen" 
+					/>
 				</button>
-				<img className={styled.popup_logo} src='/images/logo.png' alt="Logo" />
+				<Image 
+					className={styled.popup_logo} 
+					src='/images/logo.png' 
+					width={220}
+					height={150}
+					alt="Logo" 
+				/>
 				<h2 className={styled.popup_title}>{popup.title}</h2>
 				<p className={styled.popup_desc}>{popup.desc}</p>
 
@@ -83,7 +95,12 @@ const Popup = () => {
 							className={styled.eye_button}
 							onClick={() => setShowPassword(!showPassword)}
 						>
-							<img src={showPassword ? '/images/eye_open_icon.svg' : '/images/eye_close_icon.svg'} alt="Passwort" />
+							<Image 
+								src={showPassword ? '/images/eye_open_icon.svg' : '/images/eye_close_icon.svg'} 
+								width={24}
+								height={24}
+								alt="Passwort" 
+							/>
 						</button>
 					</div>
 

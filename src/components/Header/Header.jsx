@@ -1,10 +1,11 @@
 'use client'
 import React from 'react'
-import Link from 'next/link'
 import styled from '@components/Header/Header.module.scss'
 import SearchInput from '@componentsUi/SearchInput/SearchInput'
 import { usePopupStore } from '@storeusePopupStore'
 import { popup_data } from '@mocks/popup'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Header = () => {
     const { popup, openPopup, isPopupOpen } = usePopupStore();
@@ -13,7 +14,13 @@ const Header = () => {
             <section className={styled.header_content}>
                 <div className={styled.header_left}>
                     <Link href="/">
-                        <img className={styled.header_logo} src="/images/logo.png" alt="Logo" />
+                        <Image 
+                        className={styled.header_logo} 
+                        src="/images/logo.png" 
+                        width={100}
+                        height={60}
+                        alt="Logo" 
+                        />
                     </Link>
                     <SearchInput />
                 </div>
@@ -35,7 +42,12 @@ const Header = () => {
 
                     <button className={styled.header_cart}>
                         <Link href="/warenkorb">
-                            <img src="/images/cart_icon.svg" alt=""/>
+                            <Image 
+                                src="/images/cart_icon.svg" 
+                                width={24} 
+                                height={24} 
+                                alt=""
+                            />
                             <p className={styled.header_cart_quantity}>1</p>
                         </Link>
                     </button>

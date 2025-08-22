@@ -1,8 +1,9 @@
 'use client'
 import styled from '@components/GameCard/GameCard.module.scss';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useCartState } from '@store/useCartState';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const GameCard = ({ game }) => {
   const { addToCart } = useCartState();
@@ -18,9 +19,22 @@ const GameCard = ({ game }) => {
   return (
     <div className={styled.card}>
       <div className={styled.cover_wrapper}>
-        <Link href={`/spiel/${game.name}`}><img src={game.cover} alt={game.name} className={styled.cover} /></Link>
+        <Link href={`/spiel/${game.name}`}>
+          <Image 
+          src={game.cover} 
+          alt={game.name} 
+          className={styled.cover}
+          width={400}
+          height={250}
+          />
+        </Link>
         <div className={styled.rating}>{game.rating.toFixed(1)}
-          <img src="/images/star_icon.svg" alt="" />
+          <Image 
+          src="/images/star_icon.svg" 
+          width={18}
+          height={18}
+          alt="" 
+          />
         </div>
       </div>
 
