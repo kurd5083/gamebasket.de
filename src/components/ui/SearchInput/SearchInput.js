@@ -11,7 +11,7 @@ const SearchInput = () => {
         placeholder='asd'
         />
       <button className={styled.search_button}>
-        <Image src='/images/search_icon.svg' width={16} height={16}/>
+        <Image src='/images/search_icon.svg' width={16} height={16} alt=""/>
         </button>
     </div>
   )
