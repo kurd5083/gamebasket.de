@@ -1,0 +1,113 @@
+.offer {
+	background: url("/images/offer_bac.jpg") no-repeat left top / cover;
+	height: calc(100svh - 82px);
+	position: relative;
+
+	.offer_bird {
+		position: absolute;
+		width: 60px;
+		height: 60px;
+		background: url('/images/bird.png') no-repeat center/contain;
+		top: 20%;
+		left: -60px;
+		animation: fly 12s linear infinite;
+		z-index: 10;
+	}
+
+	@keyframes fly {
+		0% {
+			transform: translateX(0) translateY(0) rotate(0deg);
+		}
+		25% {
+			transform: translateX(25vw) translateY(-50px) rotate(-10deg);
+		}
+		50% {
+			transform: translateX(50vw) translateY(0) rotate(0deg);
+		}
+		75% {
+			transform: translateX(75vw) translateY(-50px) rotate(30deg);
+		}
+		100% {
+			transform: translateX(100vw) translateY(0) rotate(0deg);
+		}
+	}
+
+	.offer_content {
+		box-sizing: border-box;
+		max-width: 1440px;
+		margin: 0 auto;
+		padding: 16px 32px;
+		display: flex;
+		align-items: center;
+		gap: 40px;
+		height: 100%;
+
+		.offer_form {
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			padding: 32px 16px;
+			border-radius: 32px;
+			border: 1px solid #000;
+			background: #10101033;
+			backdrop-filter: blur(10px);
+
+			.offer_form_title {
+				color: #fff;
+				font-size: 32px;
+				margin-bottom: 20px;
+			}
+
+			.offer_subtitle {
+				font-size: 28px;
+				margin-bottom: 30px;
+			}
+
+			.offer_text {
+				font-size: 18px;
+				margin-bottom: 20px;
+			}
+
+			.offer_label {
+				color: #fff;
+				font-size: 20px;
+				margin-bottom: 10px;
+			}
+
+			.offer_input {
+				border-radius: 32px;
+				height: 48px;
+				background-color: transparent;
+				border: 1px solid #fff;
+				padding: 0 16px;
+				color: #fff;
+				margin-bottom: 20px;
+
+				&::placeholder {
+					color: #ffffff86;
+				}
+			}
+
+			.offer_button {
+				background-color: #FFA500;
+				height: 48px;
+				border-radius: 32px;
+				font-weight: 600;
+				color: #fff;
+
+				&:hover {
+					background-color: #000;
+					color: #fff;
+				}
+			}
+		}
+
+		.offer_title {
+			background: url('/images/offer_bac.jpg') center bottom;
+			-webkit-background-clip: text;
+			color: transparent;
+			font-size: 80px;
+			width: fit-content;
+		}
+	}
+}
