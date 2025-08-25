@@ -1,45 +1,69 @@
 .footer {
-    background-color: #000;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
+	background-color: #000;
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
 
-    .footer_content {
-        box-sizing: border-box;
-        display: flex;
-        align-items: flex-start;
-        gap: 160px;
-        max-width: 1440px;
-        margin: 0 auto;
-        padding: 32px 32px 0;
-        width: 100%;
+	.footer_content {
+		box-sizing: border-box;
+		display: flex;
+		align-items: flex-start;
+		gap: 160px;
+		max-width: 1440px;
+		margin: 0 auto;
+		padding: 32px 32px 0;
+		width: 100%;
 
-        .footer_columns {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
+		@media (max-width: 768px) {
+			flex-wrap: wrap;
+			gap: 40px;
+		}
 
-            .footer_column {
-                .footer_column_title {
-                    font-size: 20px;
-                    color: #fff;
-                    margin-bottom: 30px;
-                }
-                .footer_column_list {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 20px;
-                }
-                .footer_column_item {
-                    color: #fff;
-                }
+		@media (max-width: 576px) {
+			padding: 32px 16px 0;
+		}
 
-            }
-        }
-    }
-    .footer_copyright {
-        padding-bottom: 32px;
-        margin: 0 auto;
-        color: #fff;
-    }
+		.footer_logo {
+			@media (max-width: 768px) {
+				width: 150px;
+				height: auto;
+			}
+		}
+
+		.footer_columns {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 40px;
+			width: 100%;
+
+			.footer_column {
+				.footer_column_title {
+					font-size: 20px;
+					color: #fff;
+					margin-bottom: 30px;
+
+					@media (max-width: 768px) {
+						font-size: 18px;
+					}
+				}
+
+				.footer_column_list {
+					display: flex;
+					flex-direction: column;
+					gap: 20px;
+				}
+
+				.footer_column_item {
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	.footer_copyright {
+		padding-bottom: 32px;
+		margin: 0 auto;
+		color: #fff;
+	}
 }

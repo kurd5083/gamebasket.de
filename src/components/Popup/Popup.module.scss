@@ -1,3 +1,9 @@
+.base_button {
+  height: 48px;
+  border-radius: 32px;
+  font-size: 18px
+}
+
 .popup_overlay {
   position: fixed;
   top: 0;
@@ -7,149 +13,160 @@
   background-color: #00000029;
   backdrop-filter: blur(16px);
   z-index: 1001;
-}
 
-.popup_content {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: calc(100% - 32px);
-  max-width: 520px;
-  max-height: calc(100svh - 32px);
-  background-color: #fff;
-  transform: translate(-50%, -50%);
-  padding: 80px 40px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #00000014;
-  overflow-y: auto;
-  border-radius: 16px;
+  .popup_content {
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: calc(100% - 32px);
+    max-width: 520px;
+    max-height: calc(100svh - 32px);
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    padding: 80px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #00000014;
+    overflow-y: auto;
+    border-radius: 16px;
 
-  @media (max-width: 576px) {
-    padding: 94px 25px 54px;
+    @media (max-width: 576px) {
+      padding: 94px 25px 54px;
+    }
+
+    .popup_close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0000000A;
+      border: 1px solid #00000029;
+      border-radius: 8px;
+    }
+
+    .popup_logo {
+      margin-bottom: 48px;
+
+      @media(max-width: 576px) {
+        margin-bottom: 24px;
+      }
+    }
+
+    .popup_title {
+      font-weight: 400;
+      font-size: 30px;
+      margin-bottom: 8px;
+      line-height: 120%;
+      text-align: center;
+    }
+
+    .popup_desc {
+      font-size: 16px;
+      line-height: 160%;
+      margin-bottom: 48px;
+      color: #000000A3;
+      text-align: center;
+
+      @media(max-width: 576px) {
+        margin-bottom: 24px;
+      }
+    }
+
+    .popup_form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+
+      @media(max-width: 576px) {
+        gap: 12px;
+      }
+
+      .mail_input {
+        background: #0000000A;
+        width: 100%;
+        border: 1px solid #000000A3;
+        color: #000;
+        border-radius: 32px;
+        padding: 11px 16px;
+        &::placeholder {
+          color: #00000052;
+        }
+      }
+
+      .password_input {
+        background: #0000000A;
+        width: 100%;
+        border: 1px solid #000000A3;
+        color: #000;
+        border-radius: 32px;
+        padding: 11px 16px;
+        padding-right: 48px;
+
+        &::placeholder {
+          color: #00000052;
+        }
+      }
+
+      .popup_form_container {
+        position: relative;
+
+
+        .eye_button {
+          position: absolute;
+          top: 50%;
+          right: 16px;
+          transform: translateY(-50%);
+          height: 24px;
+          width: 24px;
+          background-color: transparent;
+          border: none;
+          padding: 0;
+
+          img {
+            filter: brightness(0) saturate(100%) invert(16%) sepia(11%) saturate(1038%) hue-rotate(161deg) brightness(93%) contrast(87%);
+            opacity: 0.32;
+          }
+        }
+
+
+      }
+
+      .form_button {
+        @extend .base_button;
+        background-color: #FFA500;
+        color: #fff;
+      }
+
+      .popup_error {
+        color: #ff4d4f;
+        font-size: 14px;
+        text-align: left;
+        width: 100%;
+        padding: 4px 16px;
+        background-color: #ff4d4f14;
+        border-radius: 4px;
+        border-left: 3px solid #ff4d4f;
+      }
+
+      .popup_subtext {
+        text-align: center;
+        font-size: 16px;
+        line-height: 160%;
+        color: #00000052;
+      }
+
+      .link_button {
+        @extend .base_button;
+        color: #FFA500;
+        border: 1px solid #FFA500;
+      }
+    }
   }
-}
-
-.popup_close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #0000000A;
-  border: 1px solid #00000029;
-  border-radius: 8px;
-}
-
-.popup_logo {
-  margin-bottom: 48px;
-}
-
-.popup_title {
-  font-weight: 400;
-  font-size: 30px;
-  margin-bottom: 8px;
-  line-height: 140%;
-  text-align: center;
-}
-
-.popup_desc {
-  font-size: 16px;
-  line-height: 160%;
-  margin-bottom: 48px;
-  color: #000000A3;
-  text-align: center;
-}
-
-.popup_form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  width: 100%;
-}
-
-.popup_form_container {
-  position: relative;
-}
-
-.mail_input {
-  background: #0000000A;
-  width: 100%;
-  border: 1px solid #000000A3;
-  color: #000;
-  border-radius: 32px;
-  padding: 11px 16px;
-
-  &::placeholder {
-    color: #00000052;
-  }
-}
-
-.password_input {
-  background: #0000000A;
-  width: 100%;
-  border: 1px solid #000000A3;
-  color: #000;
-  border-radius: 32px;
-  padding: 11px 16px;
-
-  &::placeholder {
-    color: #00000052;
-  }
-}
-
-.eye_button {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  height: 24px;
-  width: 24px;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-
-  img {
-    filter: brightness(0) saturate(100%) invert(16%) sepia(11%) saturate(1038%) hue-rotate(161deg) brightness(93%) contrast(87%);
-    opacity: 0.32;
-  }
-}
-
-.base_button {
-    height: 48px;
-    border-radius: 32px;
-    font-size: 18px
-}
-.form_button {
-  @extend .base_button;
-  background-color: #FFA500;
-  color: #fff;
-}
-
-.link_button {
-  @extend .base_button;
-  color: #FFA500;
-  border: 1px solid #FFA500;
-}
-
-.popup_error {
-  color: #ff4d4f;
-  font-size: 14px;
-  text-align: left;
-  width: 100%;
-  padding: 4px 16px;
-  background-color: #ff4d4f14;
-  border-radius: 4px;
-  border-left: 3px solid #ff4d4f;
-}
-
-.popup_subtext {
-  text-align: center;
-  font-size: 16px;
-  line-height: 160%;
-  color: #00000052;
 }

@@ -1,21 +1,21 @@
-import styles from './Oeber.module.scss';
+import styled from './Oeber.module.scss';
 
 const Oeber = () => {
   return (
-    <section className={styles.about}>
-      <h2 className={styles.about_head}>Über uns</h2>
-      <div className={styles.about_block}>
-        <p className={styles.about_paragraph}>
-          Willkommen bei GameBasket – deiner Anlaufstelle für Retro-Gaming in digitaler Form. Seit 2018 mit Sitz in Berlin, bieten wir Gamer:innen alles, was das Herz begehrt, von klassischen Spielen bis hin zu nostalgischen Highlights, alles zu attraktiven Preisen.
+    <section className={styled.about}>
+      <h2 className={styled.about_head}>Oeber uns</h2>
+      <div className={styled.about_block}>
+        <p className={styled.about_paragraph}>
+          Willkommen bei GameBasket – deiner Anlaufstelle foer Retro-Gaming in digitaler Form. Seit 2018 mit Sitz in Berlin, bieten wir Gamer:innen alles, was das Herz begehrt, von klassischen Spielen bis hin zu nostalgischen Highlights, alles zu attraktiven Preisen.
         </p>
-        <p className={styles.about_paragraph}>
-          Ob legendäre Jump-&apos;n&apos;-Run-Abenteuer, packende RPG-Klassiker oder pixelige Spiele, die ganze Generationen geprägt haben – bei uns findet jeder Retro-Fan seine Lieblingsschätze.
+        <p className={styled.about_paragraph}>
+          Ob legendaere Jump-&apos;n&apos;-Run-Abenteuer, packende RPG-Klassiker oder pixelige Spiele, die ganze Generationen gepraegt haben – bei uns findet jeder Retro-Fan seine Lieblingsschaetze.
         </p>
-        <p className={styles.about_paragraph}>
-          Wir legen großen Wert auf schnelle Lieferung der Game-Keys, sichere Zahlungsmöglichkeiten und einen zuverlässigen Support. Alle Keys sind 100 % authentisch und werden unmittelbar nach dem Kauf zugestellt.
+        <p className={styled.about_paragraph}>
+          Wir legen grossen Wert auf schnelle Lieferung der Game-Keys, sichere Zahlungsmueglichkeiten und einen zuverlaessigen Support. Alle Keys sind 100 % authentisch und werden unmittelbar nach dem Kauf zugestellt.
         </p>
-        <p className={styles.about_paragraph}>
-          Schließe dich unserer wachsenden Community von Retro-Enthusiasten an, erweitere deine Spielesammlung und starte noch heute dein nächstes digitales Abenteuer mit GameBasket!
+        <p className={styled.about_paragraph}>
+          Schliesse dich unserer wachsenden Community von Retro-Enthusiasten an, erweitere deine Spielesammlung und starte noch heute dein naechstes digitales Abenteuer mit GameBasket!
         </p>
       </div>
     </section>

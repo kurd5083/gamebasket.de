@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
 export const useFiltredState = create((set) => ({
-    filtred: '',
+    filtred: null,
     setFiltred: (value) => set({ filtred: value })
 }))

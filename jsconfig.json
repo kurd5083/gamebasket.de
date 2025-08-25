@@ -2,11 +2,12 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-       "@components*": ["src/components/*"],
-       "@componentsUi*": ["src/components/ui/*"],
-       "@styles*": ["styles/*"],
-       "@mocks*": ["src/mocks/*"],
-       "@store*": ["src/store/*"],
+      "@components*": ["src/components/*"],
+      "@componentsUi*": ["src/components/ui/*"],
+      "@styles*": ["styles/*"],
+      "@mocks*": ["src/mocks/*"],
+      "@store*": ["src/store/*"],
+      "@lib*": ["src/lib/*"],
     }
   }
 }

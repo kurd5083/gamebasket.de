@@ -37,10 +37,13 @@ export const useCartState = create(
                 return get().carts.reduce((total, item) => total + item.quantity, 0)
             },
             totalPrice: () => {
-                return get().carts.reduce((total, item) => total + item.price, 0)
+                return get().carts.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)
             },
             totalDiscount: () => {
-                return get().carts.reduce((total, item) => total + item.discount, 0)
+                return get().carts.reduce((total, item) => total + item.price / 100 * item.discount  * item.quantity, 0).toFixed(2)
+            },
+            clearCart: () => {
+                set({ carts: [] })
             },
         }),
         { name: 'state-cart' }

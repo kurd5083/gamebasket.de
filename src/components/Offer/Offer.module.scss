@@ -1,5 +1,5 @@
 .offer {
-	background: url("/images/offer_bac.jpg") no-repeat left top / cover;
+	background: url("/images/offer_bac.webp") no-repeat left top / cover;
 	height: calc(100svh - 82px);
 	position: relative;
 
@@ -7,7 +7,7 @@
 		position: absolute;
 		width: 60px;
 		height: 60px;
-		background: url('/images/bird.png') no-repeat center/contain;
+		background: url('/images/bird.webp') no-repeat center/contain;
 		top: 20%;
 		left: -60px;
 		animation: fly 12s linear infinite;
@@ -18,15 +18,19 @@
 		0% {
 			transform: translateX(0) translateY(0) rotate(0deg);
 		}
+
 		25% {
 			transform: translateX(25vw) translateY(-50px) rotate(-10deg);
 		}
+
 		50% {
 			transform: translateX(50vw) translateY(0) rotate(0deg);
 		}
+
 		75% {
 			transform: translateX(75vw) translateY(-50px) rotate(30deg);
 		}
+
 		100% {
 			transform: translateX(100vw) translateY(0) rotate(0deg);
 		}
@@ -39,10 +43,20 @@
 		padding: 16px 32px;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		gap: 40px;
 		height: 100%;
 
-		.offer_form {
+		@media(max-width: 1200px) {
+			flex-direction: column;
+		}
+
+		@media(max-width: 576px) {
+			padding: 16px;
+			gap: 20px;
+		}
+
+		.offer_block {
 			box-sizing: border-box;
 			display: flex;
 			flex-direction: column;
@@ -52,62 +66,62 @@
 			background: #10101033;
 			backdrop-filter: blur(10px);
 
-			.offer_form_title {
+			.offer_block_title {
 				color: #fff;
 				font-size: 32px;
 				margin-bottom: 20px;
+
+				@media(max-width: 576px) {
+					font-size: 20px;
+
+					margin-bottom: 10px;
+				}
 			}
 
 			.offer_subtitle {
 				font-size: 28px;
 				margin-bottom: 30px;
+
+				@media(max-width: 576px) {
+
+					font-size: 16px;
+					margin-bottom: 20px;
+				}
 			}
 
 			.offer_text {
 				font-size: 18px;
 				margin-bottom: 20px;
-			}
 
-			.offer_label {
-				color: #fff;
-				font-size: 20px;
-				margin-bottom: 10px;
-			}
-
-			.offer_input {
-				border-radius: 32px;
-				height: 48px;
-				background-color: transparent;
-				border: 1px solid #fff;
-				padding: 0 16px;
-				color: #fff;
-				margin-bottom: 20px;
-
-				&::placeholder {
-					color: #ffffff86;
-				}
-			}
-
-			.offer_button {
-				background-color: #FFA500;
-				height: 48px;
-				border-radius: 32px;
-				font-weight: 600;
-				color: #fff;
-
-				&:hover {
-					background-color: #000;
-					color: #fff;
+				@media(max-width: 576px) {
+					font-size: 14px;
+					margin-bottom: 10px;
 				}
 			}
 		}
 
 		.offer_title {
-			background: url('/images/offer_bac.jpg') center bottom;
+			background: url('/images/offer_bac.webp') center bottom;
 			-webkit-background-clip: text;
 			color: transparent;
-			font-size: 80px;
+			font-size: 74px;
 			width: fit-content;
+			position: relative;
+
+			@media(max-width: 1200px) {
+				background: url('/images/offer_bac.webp') center top;
+				-webkit-background-clip: text;
+				text-align: center;
+
+			}
+
+			@media(max-width: 768px) {
+				font-size: 52px;
+			}
+
+			@media(max-width: 576px) {
+				font-size: 32px;
+			}
 		}
 	}
 }

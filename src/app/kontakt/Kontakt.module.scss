@@ -3,7 +3,9 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 32px;
-
+    @media(max-width: 576px) {
+        padding: 32px 16px;
+    } 
     .kontakt_head {
         margin-bottom: 40px;
         font-size: 32px;
@@ -24,7 +26,7 @@
         }
 
         @media (max-width: 576px) {
-            font-size: 30px;
+            font-size: 28px;
             word-wrap: break-word;
         }
     }
@@ -40,7 +42,9 @@
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
         background-color: #ffffff;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+        @media(max-width: 576px) {
+            padding: 32px 16px;
+        } 
         &:hover {
             transform: translateY(-4px);
             box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
@@ -50,6 +54,9 @@
             color: #000000A3;
             font-size: 16px;
             line-height: 160%;
+            a {
+                color: #FFA500;
+            }
         }
     }
 }

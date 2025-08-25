@@ -1,30 +1,29 @@
-import React from 'react';
 import styled from '@styles/Policy.module.scss';
 
 const Datenschutzerklaerung = () => {
 	return (
 		<section className={styled.policy_container}>
-			<h2 className={styled.policy_head}>Datenschutzerklärung</h2>
+			<h2 className={styled.policy_head}>Datenschutzerklaerung</h2>
 
 			<div className={styled.policy_block}>
-				<p>Diese Datenschutzerklärung erläutert, wie https://GameBasket.de (die „Website“ oder „wir“) Ihre personenbezogenen Daten sammelt, verwendet und weitergibt, wenn Sie unsere Website besuchen oder Produkte kaufen.</p>
+				<p>Diese Datenschutzerklaerung erlaeutert, wie https://GameBasket.de (die „Website“ oder „wir“) Ihre personenbezogenen Daten sammelt, verwendet und weitergibt, wenn Sie unsere Website besuchen oder Produkte kaufen.</p>
 			</div>
 
 			<h3 className={styled.policy_title}>Erhebung personenbezogener Daten</h3>
 			<div className={styled.policy_block_children}>
-				<p>Beim Besuch unserer Website erfassen wir bestimmte Informationen über Ihr Gerät und Ihre Interaktion mit der Website, sowie Informationen, die für die Abwicklung Ihrer Bestellungen erforderlich sind. Zusätzliche Daten können erfasst werden, wenn Sie den Kundensupport kontaktieren. Alle Informationen, die eine Person eindeutig identifizieren können, werden als „personenbezogene Daten“ bezeichnet.</p>
+				<p>Beim Besuch unserer Website erfassen wir bestimmte Informationen oeber Ihr Geraet und Ihre Interaktion mit der Website, sowie Informationen, die foer die Abwicklung Ihrer Bestellungen erforderlich sind. Zusaetzliche Daten kuennen erfasst werden, wenn Sie den Kundensupport kontaktieren. Alle Informationen, die eine Person eindeutig identifizieren kuennen, werden als „personenbezogene Daten“ bezeichnet.</p>
 
 				<div>
-					<h4 className={styled.children_title}>Geräteinformationen</h4>
+					<h4 className={styled.children_title}>Geraeteinformationen</h4>
 					<ul className={styled.children_block_ul}>
 						<li>Beispiele erhobener Daten:</li>
 						<li>Browsertyp und -version, IP-Adresse, Zeitzone, Cookies, besuchte Seiten oder Produkte, Suchbegriffe, Interaktionen mit der Website.</li>
 						<li>Zweck:</li>
-						<li>Sicherstellung der Website-Funktionalität, Analyse des Nutzerverhaltens und Optimierung der Website.</li>
+						<li>Sicherstellung der Website-Funktionalitaet, Analyse des Nutzerverhaltens und Optimierung der Website.</li>
 						<li>Quelle:</li>
-						<li>Automatisch über Cookies, Protokolldateien, Web-Beacons, Tags oder Pixel erhoben.</li>
+						<li>Automatisch oeber Cookies, Protokolldateien, Web-Beacons, Tags oder Pixel erhoben.</li>
 						<li>Weitergabe:</li>
-						<li>Mit Shopify und Dritten wie Facebook oder Instagram für gezielte Werbung.</li>
+						<li>Mit Shopify und Dritten wie Facebook oder Instagram foer gezielte Werbung.</li>
 					</ul>
 				</div>
 
@@ -34,11 +33,11 @@ const Datenschutzerklaerung = () => {
 						<li>Beispiele erhobener Daten:</li>
 						<li>Name, Rechnungs- und Lieferadresse, Zahlungsinformationen, E-Mail-Adresse, Telefonnummer.</li>
 						<li>Zweck:</li>
-						<li>Abwicklung von Bestellungen, Zahlungsabwicklung, Versand, Rechnungsstellung, Kommunikation, Betrugsprüfung, personalisierte Angebote und Werbung.</li>
+						<li>Abwicklung von Bestellungen, Zahlungsabwicklung, Versand, Rechnungsstellung, Kommunikation, Betrugsproefung, personalisierte Angebote und Werbung.</li>
 						<li>Quelle:</li>
 						<li>Von Ihnen bereitgestellt.</li>
 						<li>Weitergabe:</li>
-						<li>Mit Shopify und Dritten wie Facebook oder Instagram für Marketingzwecke.</li>
+						<li>Mit Shopify und Dritten wie Facebook oder Instagram foer Marketingzwecke.</li>
 					</ul>
 				</div>
 
@@ -48,88 +47,88 @@ const Datenschutzerklaerung = () => {
 						<li>Beispiele erhobener Daten:</li>
 						<li>Name, E-Mail, Liefer- und Rechnungsadresse, Telefonnummer.</li>
 						<li>Zweck:</li>
-						<li>Bearbeitung Ihrer Anfragen und Unterstützung.</li>
+						<li>Bearbeitung Ihrer Anfragen und Unterstoetzung.</li>
 						<li>Quelle:</li>
 						<li>Von Ihnen bereitgestellt.</li>
 						<li>Weitergabe:</li>
-						<li>Shopify und Dritten nur für Marketing bei ausdrücklicher Nutzung.</li>
+						<li>Shopify und Dritten nur foer Marketing bei ausdroecklicher Nutzung.</li>
 					</ul>
 				</div>
 			</div>
 
-			<h3 className={styled.policy_title}>Minderjährige</h3>
+			<h3 className={styled.policy_title}>Minderjaehrige</h3>
 			<div className={styled.policy_block}>
-				<p>Unsere Website richtet sich nicht an Personen unter 18 Jahren. Wir erfassen keine wissentlich personenbezogenen Daten von Kindern. Eltern können uns kontaktieren, um versehentlich erfasste Daten von Minderjährigen löschen zu lassen.</p>
+				<p>Unsere Website richtet sich nicht an Personen unter 18 Jahren. Wir erfassen keine wissentlich personenbezogenen Daten von Kindern. Eltern kuennen uns kontaktieren, um versehentlich erfasste Daten von Minderjaehrigen lueschen zu lassen.</p>
 			</div>
 
 			<h3 className={styled.policy_title}>Weitergabe personenbezogener Daten</h3>
 			<div className={styled.policy_block}>
-				<p>Wir teilen Ihre Daten nur mit Dienstleistern, die uns bei der Bereitstellung unserer Dienste unterstützen:</p>
-				<p>Shopify für den Betrieb unseres Shops.</p>
-				<p>Facebook und Instagram für Marketingzwecke. Nutzer können ihre Daten hier abmelden: Facebook-Hilfe.</p>
-				<p>Wir geben Daten ggf. an Behörden oder Dritte weiter, wenn dies gesetzlich vorgeschrieben ist oder zum Schutz unserer Rechte dient.</p>
+				<p>Wir teilen Ihre Daten nur mit Dienstleistern, die uns bei der Bereitstellung unserer Dienste unterstoetzen:</p>
+				<p>Shopify foer den Betrieb unseres Shops.</p>
+				<p>Facebook und Instagram foer Marketingzwecke. Nutzer kuennen ihre Daten hier abmelden: Facebook-Hilfe.</p>
+				<p>Wir geben Daten ggf. an Behuerden oder Dritte weiter, wenn dies gesetzlich vorgeschrieben ist oder zum Schutz unserer Rechte dient.</p>
 			</div>
 
 			<h3 className={styled.policy_title}>Verhaltensbezogene Werbung</h3>
 			<div className={styled.policy_block_children}>
 				<p>Wir nutzen Ihre Daten, um relevante Werbung oder Mitteilungen zu liefern:</p>
-				<p>Google Analytics: Analyse der Website-Nutzung (Opt-out verfügbar)</p>
-				<p>Facebook & Instagram Ads: Abmeldung möglich</p>
+				<p>Google Analytics: Analyse der Website-Nutzung (Opt-out verfoegbar)</p>
+				<p>Facebook & Instagram Ads: Abmeldung mueglich</p>
 				<p>Allgemeines Opt-out: Network Advertising Initiative, DAA</p>
 			</div>
 
 			<h3 className={styled.policy_title}>Verwendung personenbezogener Daten</h3>
 			<div className={styled.policy_block_children}>
-				<p>Wir verwenden personenbezogene Daten für:</p>
+				<p>Wir verwenden personenbezogene Daten foer:</p>
 				<ul className={styled.children_block_ul}>
 					<li>Verkauf von Produkten</li>
 					<li>Zahlungsabwicklung</li>
-					<li>Versand und Erfüllung von Bestellungen</li>
+					<li>Versand und Erfoellung von Bestellungen</li>
 					<li>Informationen zu neuen Produkten und Angeboten</li>
 				</ul>
 
 				<div>
 					<h4 className={styled.children_title}>Rechtsgrundlage (DSGVO)</h4>
-					<p>Für Nutzer aus dem EWR verarbeiten wir Daten basierend auf:</p>
+					<p>Foer Nutzer aus dem EWR verarbeiten wir Daten basierend auf:</p>
 					<ul className={styled.children_block_ul}>
 						<li>Einwilligung</li>
-						<li>Vertragserfüllung</li>
+						<li>Vertragserfoellung</li>
 						<li>Gesetzlichen Pflichten</li>
 						<li>Schutz lebenswichtiger Interessen</li>
-						<li>Aufgaben im öffentlichen Interesse</li>
-						<li>Berechtigten Interessen, soweit Ihre Rechte nicht überwiegen</li>
+						<li>Aufgaben im ueffentlichen Interesse</li>
+						<li>Berechtigten Interessen, soweit Ihre Rechte nicht oeberwiegen</li>
 					</ul>
 				</div>
 
 				<div>
 					<h4 className={styled.children_title}>Aufbewahrung</h4>
-					<p>Personenbezogene Daten von Bestellungen werden gespeichert, bis eine Löschung angefordert wird.</p>
+					<p>Personenbezogene Daten von Bestellungen werden gespeichert, bis eine Lueschung angefordert wird.</p>
 				</div>
 
 				<div>
 					<h4 className={styled.children_title}>Automatisierte Entscheidungsfindung</h4>
-					<p>Wir führen keine vollautomatischen Entscheidungen mit rechtlichen oder erheblichen Auswirkungen durch. Shopify nutzt jedoch zeitlich begrenzte automatisierte Prüfungen zur Betrugsprävention, z. B.:</p>
+					<p>Wir foehren keine vollautomatischen Entscheidungen mit rechtlichen oder erheblichen Auswirkungen durch. Shopify nutzt jedoch zeitlich begrenzte automatisierte Proefungen zur Betrugspraevention, z. B.:</p>
 					<ul className={styled.children_block_ul}>
-						<li>Vorübergehende Sperrung von IP-Adressen bei mehrfach fehlgeschlagenen Transaktionen</li>
-						<li>Vorübergehende Sperre von Kreditkarten, die mit blockierten IPs verknüpft sind</li>
+						<li>Voroebergehende Sperrung von IP-Adressen bei mehrfach fehlgeschlagenen Transaktionen</li>
+						<li>Voroebergehende Sperre von Kreditkarten, die mit blockierten IPs verknoepft sind</li>
 					</ul>
 				</div>
 			</div>
 
 			<h3 className={styled.policy_title}>Ihre Rechte</h3>
 			<div className={styled.policy_block_children}>
-				<p>Für Nutzer aus dem EWR:</p>
+				<p>Foer Nutzer aus dem EWR:</p>
 				<ul className={styled.children_block_ul}>
 					<li>Zugriff auf gespeicherte personenbezogene Daten</li>
-					<li>Datenübertragung an einen anderen Anbieter</li>
-					<li>Berichtigung, Aktualisierung oder Löschung von Daten</li>
+					<li>Datenoebertragung an einen anderen Anbieter</li>
+					<li>Berichtigung, Aktualisierung oder Lueschung von Daten</li>
 				</ul>
-				<p>Für Datenübertragungen außerhalb Europas siehe Shopifys DSGVO-Konformität.</p>
+				<p>Foer Datenoebertragungen ausserhalb Europas siehe Shopifys DSGVO-Konformitaet.</p>
 			</div>
 
 			<h3 className={styled.policy_title}>Cookies</h3>
 			<div className={styled.policy_block_children}>
-				<p>Wir verwenden Cookies zur Funktionsfähigkeit und Analyse unserer Website:</p>
+				<p>Wir verwenden Cookies zur Funktionsfaehigkeit und Analyse unserer Website:</p>
 
 				<div>
 					<h4 className={styled.children_title}>Funktions-Cookies</h4>
@@ -168,19 +167,19 @@ const Datenschutzerklaerung = () => {
 					</table>
 				</div>
 
-				<p>Die meisten Cookies haben eine Lebensdauer von 30 Minuten bis 2 Jahren. Sie können Cookies über Ihre Browsereinstellungen verwalten.</p>
+				<p>Die meisten Cookies haben eine Lebensdauer von 30 Minuten bis 2 Jahren. Sie kuennen Cookies oeber Ihre Browsereinstellungen verwalten.</p>
 
 				<div>
 					<h4 className={styled.children_title}>Do Not Track</h4>
-					<p>Wir berücksichtigen Do-Not-Track-Signale nicht, da kein einheitlicher Standard existiert.</p>
+					<p>Wir beroecksichtigen Do-Not-Track-Signale nicht, da kein einheitlicher Standard existiert.</p>
 				</div>
 			</div>
 
-			<h3 className={styled.policy_title}>Änderungen</h3>
+			<h3 className={styled.policy_title}>Aenderungen</h3>
 			<div className={styled.policy_block}>
-				<p>Wir passen diese Datenschutzerklärung gelegentlich an, um gesetzliche Änderungen oder Anpassungen unserer Services zu berücksichtigen.</p>
-				<p>Zuletzt aktualisiert: 27. März 2024</p>
-				<p>Bei Unzufriedenheit können Sie sich an die zuständige Datenschutzaufsichtsbehörde wenden.</p>
+				<p>Wir passen diese Datenschutzerklaerung gelegentlich an, um gesetzliche Aenderungen oder Anpassungen unserer Services zu beroecksichtigen.</p>
+				<p>Zuletzt aktualisiert: 27. Maerz 2024</p>
+				<p>Bei Unzufriedenheit kuennen Sie sich an die zustaendige Datenschutzaufsichtsbehuerde wenden.</p>
 			</div>
 		</section>
 	);

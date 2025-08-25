@@ -52,23 +52,22 @@ const Popup = () => {
 		<section className={styled.popup_overlay} onClick={() => closePopup()}>
 			<div className={styled.popup_content} onClick={(e) => e.stopPropagation()}>
 				<button className={styled.popup_close} onClick={() => closePopup()}>
-					<Image 
-						src='/images/del_icon.svg' 
+					<Image
+						src='/images/del_icon.svg'
 						width={18}
 						height={18}
-						alt="Schließen" 
+						alt="Schliessen"
 					/>
 				</button>
-				<Image 
-					className={styled.popup_logo} 
-					src='/images/logo.png' 
-					width={220}
+				<Image
+					className={styled.popup_logo}
+					src='/images/logo.webp'
+					width={250}
 					height={150}
-					alt="Logo" 
+					alt="Logo"
 				/>
 				<h2 className={styled.popup_title}>{popup.title}</h2>
 				<p className={styled.popup_desc}>{popup.desc}</p>
-
 				<form className={styled.popup_form} onSubmit={handleSubmit}>
 					<input
 						className={styled.mail_input}
@@ -79,7 +78,6 @@ const Popup = () => {
 						required
 						autoComplete="off"
 					/>
-
 					<div className={styled.popup_form_container}>
 						<input
 							className={styled.password_input}
@@ -95,15 +93,14 @@ const Popup = () => {
 							className={styled.eye_button}
 							onClick={() => setShowPassword(!showPassword)}
 						>
-							<Image 
-								src={showPassword ? '/images/eye_open_icon.svg' : '/images/eye_close_icon.svg'} 
+							<Image
+								src={showPassword ? '/images/eye_open_icon.svg' : '/images/eye_close_icon.svg'}
 								width={24}
 								height={24}
-								alt="Passwort" 
+								alt="Passwort"
 							/>
 						</button>
 					</div>
-
 					{popup.repeatPassword && (
 						<input
 							className={styled.password_input}
@@ -115,15 +112,11 @@ const Popup = () => {
 							autoComplete="new-password"
 						/>
 					)}
-
 					<button className={styled.form_button} type="submit">
 						{popup.btnForm}
 					</button>
-
 					{error && <p className={styled.popup_error}>{error}</p>}
-
 					<p className={styled.popup_subtext}>{popup.subtext}</p>
-
 					<button className={styled.link_button} type="button" onClick={handleLinkClick}>
 						{popup.btnLink}
 					</button>

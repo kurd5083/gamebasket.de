@@ -4,19 +4,23 @@ import styled from './Warenkorb.module.scss'
 import { useCartState } from '@store/useCartState';
 import Image from 'next/image';
 import Link from 'next/link';
+import { slugify } from '@lib/slugify';
 
 const Warenkorb = () => {
-	const { carts, removeCart, updateCart, totalPrice, totalDiscount, totalItems} = useCartState();
+	const { carts, removeCart, updateCart, totalPrice, totalDiscount, totalItems, clearCart } = useCartState();
 	const [selectCart, setSelectCart] = useState([]);
 	const [stateBtn, setStateBtn] = useState(false)
 	const [mounted, setMounted] = useState(false);
+	const [email, setEmail] = useState("");
+	const [promo, setPromo] = useState("");
+	const [isSubmitted, setIsSubmitted] = useState(false);
+
 	useEffect(() => setMounted(true), []);
+
 	const handleSelectCart = (id) => {
 		if (id == 'all') {
-			console.log(selectCart)
 			setStateBtn(prev => {
 				const newState = !prev;
-				console.log(selectCart, newState, carts.length != selectCart.length)
 				setSelectCart(newState ? carts.map(cart => cart.id) : []);
 				return newState;
 			});
@@ -33,6 +37,18 @@ const Warenkorb = () => {
 		}
 	}
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setIsSubmitted(true);
+		setEmail("");
+		setPromo("");
+
+		setTimeout(() => {
+			setIsSubmitted(false);
+			clearCart();
+		}, 3000);
+	};
+
 	return (
 		<section className={styled.cart}>
 			<header className={styled.cart_header}>
@@ -46,13 +62,15 @@ const Warenkorb = () => {
 							className={styled.cart_button_select}
 							onClick={() => handleSelectCart('all')}
 						>
-							<Image src="images/check_icon.svg" width={16} height={16} alt="Ausgew"/>Alle auswaehlen
+							<Image src="images/check_icon.svg" width={16} height={16} alt="Ausgew" />
+							Alle auswaehlen
 						</button>
-						<button 
+						<button
 							className={styled.cart_button_del}
 							onClick={() => removeCart(selectCart)}
 						>
-							<Image src="images/del_icon_white.svg" width={16} height={16} alt="Lueschen"/>Ausgewaehlte lueschen
+							<Image src="images/del_icon_white.svg" width={16} height={16} alt="Lueschen" />
+							Ausgewaehlte lueschen
 						</button>
 					</div>
 					<ul className={styled.product_list}>
@@ -63,28 +81,33 @@ const Warenkorb = () => {
 										className={`${styled.game_select_button} ${selectCart.includes(cart.id) ? styled.active : ''} `}
 										onClick={() => handleSelectCart(cart.id)}
 									>
-										<Image src="images/check_icon_white.svg" alt="Ausgew" width={16} height={16}/>
+										<Image src="images/check_icon_white.svg" alt="Ausgew" width={16} height={16} />
 									</button>
-									<Link href="">
-										<Image 
-											className={styled.product_image} 
-											src={cart.cover} 
+									<Link href={`/spiel/${slugify(cart.name)}`}>
+										<Image
+											className={styled.product_image}
+											src={cart.cover}
 											width={200}
 											height={150}
-											alt="" 
+											alt={cart.name}
 										/>
 									</Link>
 									<div className={styled.product_details}>
 										<div className={styled.product_details_content}>
-											<Link href="">
+											<Link href={`/spiel/${slugify(cart.name)}`}>
 												<h4 className={styled.product_name}>{cart.name}</h4>
 											</Link>
 											<p className={styled.product_description}>{cart.description}</p>
 										</div>
-
 										<div className={styled.price_container}>
-											<s className={styled.old_price}>€12</s>
-											<p className={styled.current_price}>€12 </p>
+											{cart.discount ? (
+												<>
+													<s className={styled.old_price}>€ {cart.price}</s>
+													<p className={styled.current_price}>€ {(cart.price - (cart.price / 100 * cart.discount)).toFixed(2)}</p>
+												</>
+											) : (
+												<p className={styled.current_price}>€ {cart.price}</p>
+											)}
 											<div className={styled.product_actions}>
 												<div className={styled.quantity_block}>
 													<button
@@ -114,7 +137,7 @@ const Warenkorb = () => {
 													className={styled.delete_item_button}
 													onClick={() => removeCart([cart.id])}
 												>
-													<Image src="images/del_icon.svg" width={20} height={20} alt="Del"/>
+													<Image src="images/del_icon.svg" width={20} height={20} alt="Del" />
 												</button>
 											</div>
 										</div>
@@ -124,18 +147,17 @@ const Warenkorb = () => {
 						) : (
 							<p className={styled.empty_message}>Ihr Warenkorb ist leer</p>
 						)}
-
 					</ul>
 				</div>
-
 				<div className={styled.cart_content_right}>
 					<div className={styled.right_content}>
 						<input
 							type="text"
 							placeholder="Gutscheincode eingeben"
 							className={styled.promo_input}
+							onChange={(e) => setPromo(e.target.value)}
+							value={promo}
 						/>
-
 						<div className={styled.price_blocks}>
 							<div className={styled.price_block}>
 								<p>{mounted ? totalItems() : 0} Artikel</p>
@@ -147,24 +169,34 @@ const Warenkorb = () => {
 							</div>
 							<div className={styled.total_block}>
 								<h3>Gesamt</h3>
-								<h3>€123</h3>
+								<h3>€{mounted ? (totalPrice() - totalDiscount()).toFixed(2) : 0}</h3>
 							</div>
 						</div>
 					</div>
-					<form className={styled.order_form}>
-						<p className={styled.form_subtext}>
-							Geben Sie Ihre E-Mail ein, um Ihren Kauf zu bestaetigen - schnell und einfach!
-						</p>
-						<input
-							type="email"
-							placeholder="Geben Sie Ihre E-Mail ein"
-							required
-							className={styled.form_input}
-						/>
-						<button type="submit" className={styled.submit_button}>
-							Schliessen Sie Ihren Kauf ab
-						</button>
-					</form>
+					{isSubmitted ? (
+						<div className={styled.success_message}>
+							<p>Vielen Dank foer Ihre Bestellung!</p>
+							<p>Wir werden uns in Koerze an die angegebene E-Mail-Adresse wenden.</p>
+							<p>Ihre Bestellung wird derzeit bearbeitet.</p>
+						</div>
+					) : (
+						<form className={styled.order_form} onSubmit={handleSubmit}>
+							<p className={styled.form_subtext}>
+								Geben Sie Ihre E-Mail ein, um Ihren Kauf zu bestaetigen - schnell und einfach!
+							</p>
+							<input
+								type="email"
+								placeholder="Geben Sie Ihre E-Mail ein"
+								required
+								value={email}
+								onChange={(e) => setEmail(e.target.value)}
+								className={styled.form_input}
+							/>
+							<button type="submit" className={styled.submit_button}>
+								Schliessen Sie Ihren Kauf ab
+							</button>
+						</form>
+					)}
 				</div>
 			</div>
 		</section>

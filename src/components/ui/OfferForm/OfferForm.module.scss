@@ -1,0 +1,75 @@
+.success_message {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 150px;
+    background-color: #ffa60094;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease-in-out;
+    padding: 16px;
+    @media(max-width: 576px) {
+        height: 133px;
+        font-size: 16px;
+    }
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+.offer_form {
+    display: flex;
+    flex-direction: column;
+
+    .offer_label {
+        color: #fff;
+        font-size: 20px;
+        margin-bottom: 10px;
+
+        @media(max-width: 576px) {
+            font-size: 14px;
+        }
+    }
+
+    .offer_input {
+        border-radius: 32px;
+        height: 48px;
+        background-color: transparent;
+        border: 1px solid #fff;
+        padding: 0 16px;
+        color: #fff;
+        margin-bottom: 20px;
+
+        &::placeholder {
+            color: #ffffff86;
+        }
+
+        @media(max-width: 576px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    .offer_button {
+        background-color: #FFA500;
+        height: 48px;
+        border-radius: 32px;
+        font-weight: 600;
+        color: #fff;
+
+        &:hover {
+            background-color: #000;
+            color: #fff;
+        }
+    }
+
+}

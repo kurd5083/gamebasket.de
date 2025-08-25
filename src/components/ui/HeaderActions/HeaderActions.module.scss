@@ -1,0 +1,68 @@
+.header_actions {
+    display: flex;
+    gap: 32px;
+
+    @media(max-width: 768px) {
+        gap: 16px;
+    }
+
+    .btns_actions {
+        .btn_login {
+            width: 140px;
+            border-radius: 32px;
+            height: 48px;
+            border: 1px solid #000;
+            margin-right: 16px;
+            font-weight: 600;
+        }
+
+        .btn_register {
+            width: 140px;
+            border-radius: 32px;
+            height: 48px;
+            background-color: #000;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .btn_logout {
+            width: 140px;
+            border-radius: 32px;
+            height: 48px;
+            border: 1px solid #000;
+            font-weight: 600;
+        }
+
+        @media(max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .header_cart {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .header_cart_quantity {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            padding: 4px 10px;
+            border-radius: 50%;
+            background-color: #fff;
+            font-weight: 600;
+        }
+    }
+
+    .btn_menu {
+        display: none;
+        width: 48px;
+
+        @media(max-width: 768px) {
+            display: block;
+        }
+    }
+}

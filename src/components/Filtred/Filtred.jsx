@@ -6,6 +6,10 @@ import { useFiltredState } from '@store/useFiltredState'
 
 const Filtred = () => {
     const {filtred, setFiltred} = useFiltredState();
+    const handleGanre = (genre) => {
+        filtred == genre ? setFiltred(null) : setFiltred(genre)
+    }
+    
     return (
         <section className={styled.filtred}>
             <div className={styled.filtred_content}>
@@ -13,7 +17,7 @@ const Filtred = () => {
                     <button 
                         key={index}
                         className={filtred === genre ? styled.active : ''}
-                        onClick={() => setFiltred(genre)} 
+                        onClick={() => handleGanre(genre)} 
                     >
                         {genre}
                     </button>

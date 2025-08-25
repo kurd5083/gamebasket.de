@@ -26,12 +26,12 @@ export const useAuthStore = create(
             set({ isAuthenticated: true });
           return true;
         }
-        throw new Error("Ungültige Zugangsdaten");
+        throw new Error("Ungoeltige Zugangsdaten");
       },
 
       register: async (mock_user_email, mock_user_secret, repeat_secret) => {
         if (mock_user_secret !== repeat_secret) {
-          throw new Error("Passwörter stimmen nicht überein!");
+          throw new Error("Passwuerter stimmen nicht oeberein!");
         }
 
         const hashedPassword = await hashPassword(mock_user_secret);

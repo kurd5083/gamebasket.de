@@ -1,0 +1,69 @@
+.mobile_menu_container {
+    position: fixed;
+    inset: 0;
+    background: #fff;
+    z-index: 999;
+    padding: 128px 24px 24px;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &.visible {
+        transform: translateY(0);
+    }
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+
+    .mobile_nav {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        .mobile_nav_item {
+            padding: 8px 0;
+            border-bottom: 1px solid #000;
+
+            .mobile_link {
+                font-size: 18px;
+                font-weight: 500;
+                color: #000;
+                text-decoration: none;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+
+    .mobile_auth_buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: auto;
+
+        .mobile_auth_button_login {
+            border-radius: 32px;
+            height: 48px;
+            border: 1px solid #000;
+            font-weight: 600;
+        }
+
+        .mobile_auth_button_register {
+            border-radius: 32px;
+            height: 48px;
+            background-color: #000;
+            color: #fff;
+            font-weight: 600;
+        }
+        .mobile_auth_button_logout {
+            border-radius: 32px;
+            height: 48px;
+            border: 1px solid #000;
+            font-weight: 600;
+        }
+    }
+}
