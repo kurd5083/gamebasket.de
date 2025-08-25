@@ -8,10 +8,9 @@ const Offer = () => {
       <div className={styled.offer_bird}></div>
       <div className={styled.offer_content}>
         <div className={styled.offer_block}>
-          <h2 className={styled.offer_block_title}>Claim Your Epic Welcome Bonus!</h2>
-          <h3 className={styled.offer_subtitle}>New Here? Enjoy 50% Off</h3>
-          <p className={styled.offer_text}>Enter the retro world of pixel dreams and unlock your adventure now.</p>
-          <p className={styled.offer_text}>Don’t miss your chance to unlock something special!</p>
+          <h2 className={styled.offer_block_title}>Fordern Sie Ihren Willkommensbonus an!</h2>
+          <h3 className={styled.offer_subtitle}>Neu hier? 50% Rabatt sichern</h3>
+          <p className={styled.offer_text}>Tauche in die Retro-Welt der Pixelträume ein und starte dein Abenteuer.</p>
           <OfferForm/>
         </div>
         <h1 className={styled.offer_title}>Exklusives Geschenk foer Neukunden</h1>

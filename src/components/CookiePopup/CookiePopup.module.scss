@@ -1,0 +1,61 @@
+.cookie_container {
+    box-sizing: border-box;
+    position: fixed;
+    padding: 24px;
+    background-color: #fff;
+    right: 24px;
+    bottom: 24px;
+    max-width: 540px;
+    width: calc(100% - 48px);
+    border: 1px solid #00000029;
+    border-radius: 32px;
+    z-index: 10;
+
+    @media (max-width: 576px) {
+        right: 16px;
+        bottom: 16px;
+        width: calc(100% - 32px);
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 140%;
+        margin-bottom: 16px;
+    }
+
+    .description {
+        font-size: 16px;
+        color: #000000A3;
+        line-height: 160%;
+
+        a {
+            color: #FFA500;
+            margin-left: 4px;
+        }
+    }
+
+    .buttons_container {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .more_button {
+            width: 100%;
+            border-radius: 32px;
+            height: 48px;
+            border: 1px solid #000;
+            font-weight: 600;
+
+        }
+
+        .accept_button {
+            border-radius: 32px;
+            height: 48px;
+            background-color: #FFA500;
+            color: #fff;
+            font-weight: 600;
+        }
+    }
+}

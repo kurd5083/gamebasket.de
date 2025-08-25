@@ -4,6 +4,7 @@ import Header from "@components/Header/Header";
 import Footer from "@components/Footer/Footer";
 import Popup from "@components/Popup/Popup";
 import MobileMenu from "@components/MobileMenu/MobileMenu";
+import CookiePopup from "@components/CookiePopup/CookiePopup";
 
 const goblinOne = Goblin_One({
   weight: "400",
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
           <Popup/>
           <MobileMenu/>
         </main>
+        <CookiePopup/>
         <Footer/>
       </body>
     </html>

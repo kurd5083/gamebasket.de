@@ -76,9 +76,9 @@ const roeckzahlungspolitik = () => {
         <p><strong>Roecksendeadresse:</strong></p>
         <address>
           GameBasket Retourenabteilung<br />
-          12 Falcon Way, Bury St Edmunds<br />
-          Suffolk, IP28 7GR<br />
-          Vereinigtes Kuenigreich
+          Hafenstrasse 12<br />
+          20457 Hamburg<br />
+          Deutschland
         </address>
         <p>
           <a href="mailto:support@gamebasket.de">📧 support@gamebasket.de</a><br/>

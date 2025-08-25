@@ -1,6 +1,8 @@
 .offer {
+	display: flex;
+	align-items: center;
 	background: url("/images/offer_bac.webp") no-repeat left top / cover;
-	height: calc(100svh - 82px);
+	min-height: calc(100svh - 82px);
 	position: relative;
 
 	.offer_bird {
@@ -43,7 +45,6 @@
 		padding: 16px 32px;
 		display: flex;
 		align-items: center;
-		justify-content: center;
 		gap: 40px;
 		height: 100%;
 
@@ -65,32 +66,31 @@
 			border: 1px solid #000;
 			background: #10101033;
 			backdrop-filter: blur(10px);
+			max-width: 490px;
 
 			.offer_block_title {
 				color: #fff;
-				font-size: 32px;
+				font-size: 30px;
 				margin-bottom: 20px;
 
 				@media(max-width: 576px) {
 					font-size: 20px;
-
 					margin-bottom: 10px;
 				}
 			}
 
 			.offer_subtitle {
-				font-size: 28px;
+				font-size: 26px;
 				margin-bottom: 30px;
 
 				@media(max-width: 576px) {
-
 					font-size: 16px;
 					margin-bottom: 20px;
 				}
 			}
 
 			.offer_text {
-				font-size: 18px;
+				font-size: 17px;
 				margin-bottom: 20px;
 
 				@media(max-width: 576px) {
